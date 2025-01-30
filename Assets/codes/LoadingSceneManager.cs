@@ -54,6 +54,7 @@ public class LoadingSceneManager : MonoBehaviour
         {
             randomTextDisplay.text = loadingTexts[Random.Range(0, loadingTexts.Length)];
             yield return new WaitForSeconds(textChangeInterval);
+            
 
         }
     }
