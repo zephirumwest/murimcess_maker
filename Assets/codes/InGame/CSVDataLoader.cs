@@ -39,6 +39,7 @@ public class CSVDataLoader : MonoBehaviour
 
             if (columns.Count >= 5)
             {
+                Debug.Log($"데이터 로드 중... -> eventId: {columns[0]}, text: {columns[4]}");
                 int eventKey, characterId;
                 if (int.TryParse(columns[1], out eventKey) && int.TryParse(columns[2], out characterId))
                 {
@@ -48,7 +49,11 @@ public class CSVDataLoader : MonoBehaviour
                         eventKey = eventKey,
                         characterId = characterId,
                         position = columns[3],
-                        text = columns[4]
+                        text = columns[4],
+                        StartScript = columns.Count > 5 ? columns[5] : "",
+                        S1 = columns.Count > 6 ? columns[6] : "",
+                        EndScript = columns.Count > 7 ? columns[7] : "",
+                        S2 = columns.Count > 8 ? columns[8] : ""
                     });
 
                     Debug.Log($"데이터 추가됨 -> eventId: {columns[0]}, text: {columns[4]}");
@@ -69,5 +74,9 @@ public class StoryEvent
     public int eventKey;    // 대사의 순서 (클릭할 때마다 증가)
     public int characterId; // 캐릭터 ID (누가 말하는지)
     public string position;    // 캐릭터 위치 (left, right, center)
-    public string text;        // 출력할 대사 내용
+    public string text;        // 출력할 대사 내용 
+    public string StartScript;
+    public string S1;
+    public string EndScript;
+    public string S2;
 }

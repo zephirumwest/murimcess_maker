@@ -1,0 +1,7 @@
+ChoiceId,ChoiceKey,Text [UI출력],Command,S1,F1,Ratio
+Choice_01,1,나 먹고 살기도 힘든데 애는 무슨!,OpenEvent,Story_Scene_02,,1
+,2,…역시 그래야 할까요?,OpenEvent,Story_Scene_03,,1
+Choice_02,1,"""강아지를 무시한다.""",OpenEvent,Random_Scene_02,,1
+,2,"""강아지를 딸에게 쓰다듬게 한다..""",OpenEvent,Random_Scene_03,,1
+Choice_03,1,그래요? 한번 사볼까요?,OpenRandomScript,OpenRandomEvent_LotteryWin,,1
+,2,"아니요, 운에 기대고 싶지는 않군요.",OpenRandomScript,NotBuyingLottery,,1
